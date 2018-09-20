@@ -1,5 +1,7 @@
 #' Write data in 10X format i.e. directory with barcodes.tsv, genes.tsv, matrix.mtx
 #'
+#' @param obj Seurat object to print
+#' @param dir Character. Directory in which to place 10X-like files
 #' @export
 #' @examples
 #' Write10X(obj, dir)
