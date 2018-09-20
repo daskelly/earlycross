@@ -18,4 +18,5 @@ Write10X <- function(obj, dir) {
     
     mat <- obj@raw.data[, obj@cell.names]
     Matrix::writeMM(mat, file = paste0(dir, "/matrix.mtx"))
+    return()
 }
