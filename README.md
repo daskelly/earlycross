@@ -1,5 +1,13 @@
 # Signac -- extension functions to Seurat
 
+## Installing the package
+
+```r
+devtools::install_github("daskelly/signac")
+```
+
+## Building the package
+
 Here are two helpful links that I used when building
 this package:
  1. https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
