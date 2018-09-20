@@ -23,6 +23,7 @@ create("signac")
 # ...
 devtools::use_package("Seurat", "Imports")
 devtools::use_package("assertthat", "Imports")
+devtools::use_package("Matrix", "Imports")
 setwd('./signac')
 document()
 ```
