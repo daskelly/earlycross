@@ -13,7 +13,6 @@ Write10X <- function(obj, dir) {
     df <- data.frame(ID = "ENS_ID", symbol = rownames(obj@raw.data))
     write.table(df, row.names = F, col.names = F, sep = "\t", quote = F, file = paste0(dir, "/genes.tsv"))
     
-    # Matrix package is imported by Seurat
     mat <- obj@raw.data[, obj@cell.names]
-    writeMM(mat, file = paste0(dir, "/matrix.mtx"))
+    Matrix::writeMM(mat, file = paste0(dir, "/matrix.mtx"))
 }
