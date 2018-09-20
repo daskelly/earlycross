@@ -5,6 +5,9 @@
 #' Write10X(obj, dir)
 Write10X <- function(obj, dir) {
     assertthat::assert_that(class(obj) == "seurat")
+    if (! dir.exists(dir)) {
+        stop(paste0(dir, " does not exist. Stopping!"))
+    }
     
     # Barcodes
     cat(obj@cell.names, file = paste0(dir, "/barcodes.tsv"), sep = "\n")
