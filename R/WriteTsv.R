@@ -9,13 +9,6 @@
 WriteTsv <- function(obj, outfile, raw=TRUE) {
     assertthat::assert_that(class(obj) == "seurat")
     
-    # Barcodes
-    cat(obj@cell.names, file = paste0(dir, "/barcodes.tsv"), sep = "\n")
-    
-    # Genes. Seurat doesn't store ENS ID. As a hack, put ENS_ID for all genes
-    df <- data.frame(ID = "ENS_ID", symbol = rownames(obj@raw.data))
-    write.table(df, row.names = F, col.names = F, sep = "\t", quote = F, file = paste0(dir, "/genes.tsv"))
-
     if (raw) {
         mat <- obj@raw.data[, obj@cell.names] %>% as.matrix()
     } else {
