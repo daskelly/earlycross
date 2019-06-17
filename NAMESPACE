@@ -3,3 +3,7 @@
 export(CompareClustersByTrt)
 export(Write10X)
 export(WriteTsv)
+import(tidyverse)
+importFrom(Matrix,writeMM)
+importFrom(assertthat,assert_that)
+importFrom(data.table,fwrite)
