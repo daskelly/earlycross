@@ -8,7 +8,10 @@
 #' @param group_by Name of grouping variable (default is Idents)
 #' @export
 #' @importFrom magrittr "%>%"
-#' @import tidyverse
+#' @import ggplot2
+#' @import dplyr
+#' @import readr
+#' @import tibble
 #' @examples
 #' CompareClustersByTrt(obj, drug, mouse_ID, ci=TRUE)
 CompareClustersByTrt <- function(obj, trt_var, rep_var=NULL, group_by=NULL, ci=TRUE, ci_alpha=0.05, seed=1) {
