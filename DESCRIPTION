@@ -9,6 +9,7 @@ Encoding: UTF-8
 LazyData: true
 Imports: Seurat,
     assertthat,
+    data.table,
     Matrix,
-    data.table
-RoxygenNote: 6.0.1
+    tidyverse
+RoxygenNote: 6.1.1
