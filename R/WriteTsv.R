@@ -5,10 +5,12 @@
 #' @param raw A logical scalar. Should raw data be written?
 #' @param gzip A logical scalar. Should data be gzipped after writing?
 #' @export
+#' @importFrom assertthat assert_that
+#' @importFrom data.table fwrite
 #' @examples
 #' WriteTsv(obj, filename, raw=FALSE)
 WriteTsv <- function(obj, outfile, raw=TRUE, gzip=TRUE) {
-    assertthat::assert_that(class(obj) == "seurat")
+    assert_that(class(obj) == "seurat")
     
     if (raw) {
         mat <- obj@raw.data[, obj@cell.names] %>% as.matrix()
@@ -16,7 +18,7 @@ WriteTsv <- function(obj, outfile, raw=TRUE, gzip=TRUE) {
         mat <- obj@data[, obj@cell.names] %>% as.matrix()
     }
     cat("gene\t", paste(colnames(mat), collapse="\t"), "\n", file=outfile)
-    data.table::fwrite(as.data.frame(mat), file=outfile, append=TRUE, quote=FALSE, 
+    fwrite(as.data.frame(mat), file=outfile, append=TRUE, quote=FALSE, 
         sep="\t", row.names=TRUE, col.names=FALSE)
     if (gzip) gzip(outfile)
     return()

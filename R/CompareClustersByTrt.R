@@ -7,6 +7,7 @@
 #' @param ci Whether to plot binomial confidence intervals (Jeffreys)
 #' @param group_by Name of grouping variable (default is Idents)
 #' @export
+#' @import tidyverse
 #' @examples
 #' CompareClustersByTrt(obj, drug, mouse_ID, ci=TRUE)
 CompareClustersByTrt <- function(obj, trt_var, rep_var=NULL, group_by=NULL, ci=TRUE, ci_alpha=0.05, seed=1) {

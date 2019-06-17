@@ -3,10 +3,12 @@
 #' @param obj Seurat object to print
 #' @param dir Character. Directory in which to place 10X-like files
 #' @export
+#' @importFrom assertthat assert_that
+#' @importFrom Matrix writeMM
 #' @examples
 #' Write10X(obj, dir)
 Write10X <- function(obj, dir) {
-    assertthat::assert_that(class(obj) == "seurat")
+    assert_that(class(obj) == "seurat")
     if (! dir.exists(dir)) {
         stop(paste0(dir, " does not exist. Stopping!"))
     }
@@ -19,6 +21,6 @@ Write10X <- function(obj, dir) {
     write.table(df, row.names = F, col.names = F, sep = "\t", quote = F, file = paste0(dir, "/genes.tsv"))
     
     mat <- obj@raw.data[, obj@cell.names]
-    Matrix::writeMM(mat, file = paste0(dir, "/matrix.mtx"))
+    writeMM(mat, file = paste0(dir, "/matrix.mtx"))
     return()
 }
