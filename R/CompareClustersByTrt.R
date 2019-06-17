@@ -7,6 +7,7 @@
 #' @param ci Whether to plot binomial confidence intervals (Jeffreys)
 #' @param group_by Name of grouping variable (default is Idents)
 #' @export
+#' @importFrom magrittr "%>%"
 #' @import tidyverse
 #' @examples
 #' CompareClustersByTrt(obj, drug, mouse_ID, ci=TRUE)
