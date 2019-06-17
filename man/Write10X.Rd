@@ -6,6 +6,11 @@
 \usage{
 Write10X(obj, dir)
 }
+\arguments{
+\item{obj}{Seurat object to print}
+
+\item{dir}{Character. Directory in which to place 10X-like files}
+}
 \description{
 Write data in 10X format i.e. directory with barcodes.tsv, genes.tsv, matrix.mtx
 }
