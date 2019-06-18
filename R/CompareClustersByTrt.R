@@ -56,7 +56,8 @@ CompareClustersByTrt <- function(obj, trt_var, rep_var=NULL, group_by=NULL, ci=T
 		ggplot2::geom_linerange(ggplot2::aes(ymin=lower_per_thousand, ymax=upper_per_thousand), 
 			position=dodge, alpha=0.4, color='darkgray') +
 		ggplot2::geom_point(shape=16, position=dodge) +
-		ggplot2::facet_wrap(~ popF, scales="free_y") + xlab(trt_var_string) + ylab("Cells per thousand") +
+		ggplot2::facet_wrap(~ popF, scales="free_y") + 
+        ggplot2::xlab(trt_var_string) + ggplot2::ylab("Cells per thousand") +
 		ggplot2::guides(fill=FALSE, color=FALSE) +
 		ggplot2::theme_bw(base_size=16) +
 		ggplot2::theme(panel.grid.minor=ggplot2::element_blank())
