@@ -24,5 +24,7 @@ Given a Seurat object and treatment variable, compare
 clusters between levels of the treatment
 }
 \examples{
-CompareClustersByTrt(obj, drug, mouse_ID, ci=TRUE)
+pbmc_small$trt <- sample(c("drug", "control"), ncol(pbmc_small), replace=TRUE)
+pbmc_small$genotype <- sample(c("1", "2", "3"), ncol(pbmc_small), replace=TRUE)
+CompareClustersByTrt(pbmc_small, quo(trt), quo(genotype)) + xlab("")
 }
