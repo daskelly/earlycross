@@ -2,7 +2,9 @@
 % Please edit documentation in R/Write10X.R
 \name{Write10X}
 \alias{Write10X}
-\title{Write data in 10X format i.e. directory with barcodes.tsv, genes.tsv, matrix.mtx}
+\title{Write data in 10X format i.e. directory with barcodes.tsv, genes.tsv, matrix.mtx
+If object is Seurat v2, output cellranger2-like format
+If object is Seurat v3, output cellranger3-like format}
 \usage{
 Write10X(obj, dir)
 }
@@ -13,6 +15,8 @@ Write10X(obj, dir)
 }
 \description{
 Write data in 10X format i.e. directory with barcodes.tsv, genes.tsv, matrix.mtx
+If object is Seurat v2, output cellranger2-like format
+If object is Seurat v3, output cellranger3-like format
 }
 \examples{
 Write10X(obj, dir)
