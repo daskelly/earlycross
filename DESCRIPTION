@@ -1,4 +1,4 @@
-Package: signac
+Package: earlycross
 Title: Extensions to Seurat
 Version: 0.1
 Authors@R: person("Dan", "Skelly", email = "daniel.skelly@jax.org", role = c("aut", "cre"))
