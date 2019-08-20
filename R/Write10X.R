@@ -7,6 +7,7 @@
 #' @export
 #' @importFrom assertthat assert_that
 #' @importFrom Matrix writeMM
+#' @importFrom R.utils gzip
 #' @examples
 #' Write10X(obj, dir)
 Write10X <- function(obj, dir) {
@@ -39,10 +40,11 @@ Write10X <- function(obj, dir) {
       write.table(df, row.names = F, col.names = F, sep = "\t", quote = F, file = gz2)
       close(gz2)
 
-      mat <- GetAssayData(obj, "counts")[, colnames(obj)]
-      gz3 <- gzfile(paste0(dir, "/matrix.mtx.gz"), "w")
-      writeMM(mat, file = gz3)
-      close(gz3)
+      mat <- GetAssayData(obj, slot = "counts")[, colnames(obj)]
+      assert_that(nrow(mat) > 0 && ncol(mat) > 0,
+        msg = "counts matrix is not present!")
+      writeMM(mat, file = paste0(dir, "/matrix.mtx"))
+      gzip(filename = paste0(dir, "/matrix.mtx"))
     } else {
       stop("Should not get here")
     }
