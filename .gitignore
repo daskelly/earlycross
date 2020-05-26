@@ -4,3 +4,4 @@
 .Rapp.history
 .Rbuildignore
 R_nonpublic
+.DS_Store
