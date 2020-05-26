@@ -5,8 +5,15 @@
 \title{Given a Seurat object and treatment variable, compare
 clusters between levels of the treatment}
 \usage{
-CompareClustersByTrt(obj, trt_var, rep_var = NULL, group_by = NULL,
-  ci = TRUE, ci_alpha = 0.05, seed = 1)
+CompareClustersByTrt(
+  obj,
+  trt_var,
+  rep_var = NULL,
+  group_by = NULL,
+  ci = TRUE,
+  ci_alpha = 0.05,
+  seed = 1
+)
 }
 \arguments{
 \item{obj}{Seurat object}
@@ -24,7 +31,7 @@ Given a Seurat object and treatment variable, compare
 clusters between levels of the treatment
 }
 \examples{
-pbmc_small$trt <- sample(c("drug", "control"), ncol(pbmc_small), replace=TRUE)
-pbmc_small$genotype <- sample(c("1", "2", "3"), ncol(pbmc_small), replace=TRUE)
-CompareClustersByTrt(pbmc_small, quo(trt), quo(genotype)) + xlab("")
+pbmc_small$trt <- sample(c('drug', 'control'), ncol(pbmc_small), replace=TRUE)
+pbmc_small$genotype <- sample(c('1', '2', '3'), ncol(pbmc_small), replace=TRUE)
+CompareClustersByTrt(pbmc_small, quo(trt), quo(genotype)) + xlab('')
 }

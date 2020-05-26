@@ -11,4 +11,4 @@ Imports: assertthat,
     data.table,
     Matrix,
     tidyverse
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0

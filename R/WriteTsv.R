@@ -9,7 +9,7 @@
 #' @importFrom data.table fwrite
 #' @examples
 #' WriteTsv(obj, filename, raw=FALSE)
-WriteTsv <- function(obj, outfile, raw=TRUE, gzip=TRUE) {
+WriteTsv <- function(obj, outfile, raw = TRUE, gzip = TRUE) {
     assert_that(class(obj) == "seurat")
     
     if (raw) {
@@ -17,9 +17,10 @@ WriteTsv <- function(obj, outfile, raw=TRUE, gzip=TRUE) {
     } else {
         mat <- obj@data[, obj@cell.names] %>% as.matrix()
     }
-    cat("gene\t", paste(colnames(mat), collapse="\t"), "\n", file=outfile)
-    fwrite(as.data.frame(mat), file=outfile, append=TRUE, quote=FALSE, 
-        sep="\t", row.names=TRUE, col.names=FALSE)
-    if (gzip) gzip(outfile)
+    cat("gene\t", paste(colnames(mat), collapse = "\t"), "\n", file = outfile)
+    fwrite(as.data.frame(mat), file = outfile, append = TRUE, quote = FALSE, sep = "\t", 
+        row.names = TRUE, col.names = FALSE)
+    if (gzip) 
+        gzip(outfile)
     return()
 }
