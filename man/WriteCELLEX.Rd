@@ -4,12 +4,10 @@
 \alias{WriteCELLEX}
 \title{Write data in CELLEX format https://github.com/perslab/CELLEX.}
 \usage{
-WriteCELLEX(seurat_obj, cellranger_dir, outprefix, outdir = ".")
+WriteCELLEX(seurat_obj, outprefix, outdir = ".")
 }
 \arguments{
 \item{seurat_obj}{Seurat object to print}
-
-\item{cellranger_dir}{Dir of Cellranger results. Needed to get ENS IDs}
 
 \item{outprefix}{Character. Prefix for outfiles}
 
