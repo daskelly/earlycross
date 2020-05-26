@@ -3,3 +3,4 @@
 .RData
 .Rapp.history
 .Rbuildignore
+R_nonpublic
