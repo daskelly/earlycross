@@ -10,5 +10,6 @@ LazyData: true
 Imports: assertthat,
     data.table,
     Matrix,
-    tidyverse
+    tidyverse,
+    R.utils
 RoxygenNote: 7.1.0
