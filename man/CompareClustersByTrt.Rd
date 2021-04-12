@@ -33,5 +33,5 @@ clusters between levels of the treatment
 \examples{
 pbmc_small$trt <- sample(c('drug', 'control'), ncol(pbmc_small), replace=TRUE)
 pbmc_small$genotype <- sample(c('1', '2', '3'), ncol(pbmc_small), replace=TRUE)
-CompareClustersByTrt(pbmc_small, trt, genotype) + xlab('')
+CompareClustersByTrt(pbmc_small, trt, genotype) + ggplot2::xlab('')
 }
