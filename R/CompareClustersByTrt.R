@@ -11,7 +11,7 @@
 #' @examples
 #' pbmc_small$trt <- sample(c('drug', 'control'), ncol(pbmc_small), replace=TRUE)
 #' pbmc_small$genotype <- sample(c('1', '2', '3'), ncol(pbmc_small), replace=TRUE)
-#' CompareClustersByTrt(pbmc_small, trt, genotype) + xlab('')
+#' CompareClustersByTrt(pbmc_small, trt, genotype) + ggplot2::xlab('')
 CompareClustersByTrt <- function(obj, trt_var, rep_var, group_by = NULL, ci = TRUE, 
     ci_alpha = 0.05, seed = 1) {
     # For curly curly {{ syntax see
