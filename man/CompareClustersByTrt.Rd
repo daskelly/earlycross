@@ -8,7 +8,7 @@ clusters between levels of the treatment}
 CompareClustersByTrt(
   obj,
   trt_var,
-  rep_var = NULL,
+  rep_var,
   group_by = NULL,
   ci = TRUE,
   ci_alpha = 0.05,
@@ -33,5 +33,5 @@ clusters between levels of the treatment
 \examples{
 pbmc_small$trt <- sample(c('drug', 'control'), ncol(pbmc_small), replace=TRUE)
 pbmc_small$genotype <- sample(c('1', '2', '3'), ncol(pbmc_small), replace=TRUE)
-CompareClustersByTrt(pbmc_small, quo(trt), quo(genotype)) + xlab('')
+CompareClustersByTrt(pbmc_small, trt, genotype) + xlab('')
 }
